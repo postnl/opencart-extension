@@ -2,9 +2,12 @@
 
 This extension will help your visitors fill in their address.
 - quick note: install via OC extentions / installer
+  The extension will only be listed in the opencart.com marketplace, not within the OpenCart 3.0 admin panel area. 
+  This means you cannot find the extension via the Extensions > Marketplace Search from within the backend. Just use the Extensions > Installer, like in OC 2.0
+
 - todo: FAQ link
 - todo: Installation video link
-- todo: More info link and helpdesk link
+- More info on plugins [here](https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/it-koppelingen-webwinkels/plug-ins/)
 
 # Pre-requisites prior to installing the plugin
   1. The plugin supports these OpenCart versions - 2.0.x.x to 2.2.x.x, 2.3.x.x, 3.x.x.x and above.
