@@ -1,9 +1,11 @@
 # PostNL Address Check
 
 This extension will help your visitors fill in their address.
-- quick note: install via OC extentions / installer
+- A quick note: install via OC extentions / installer.  
   The extension will only be listed in the opencart.com marketplace, not within the OpenCart 3.0 admin panel area. 
   This means you cannot find the extension via the Extensions > Marketplace Search from within the backend. Just use the Extensions > Installer, like in OC 2.0
+- Do you wish to change settings after installation?  
+  Login via /admin or /beheer, go to Extensions > Extensions > Modules and scroll to PostNL listings. Use the Edit button.
 
 - todo: FAQ link
 - todo: Installation video link
