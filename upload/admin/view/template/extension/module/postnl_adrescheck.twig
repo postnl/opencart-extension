@@ -1,0 +1,174 @@
+<!-- Copyright (c) De Webmakers -->
+<!-- All rights reserved. -->
+
+<!-- This source code is licensed under the license found in the -->
+<!-- LICENSE file in the root directory of this source tree. -->
+{{ header }}{{ column_left }}
+
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="pull-right">
+                <button type="submit" form="form-postnl-adrescheck" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+                <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+            </div>
+            <h1>{{ heading_title }}</h1>
+            <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        {% if error_warning %}
+            <div class="alert alert-danger">
+                <i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %}
+        {% if success_message %}
+            <div class="alert alert-success">
+                <i class="fa fa-exclamation-circle"></i> {{ success_message }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+            </div>
+            <div class="panel-body">
+                <form action="{{ action }}" method="post" id="form-postnl-adrescheck" class="form-horizontal">
+
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <h3>{{ text_heading }}</h3>
+                            {{ text_body }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="module_postnl_adrescheck_status">{{ label_api }}</label>
+                        <div class="col-sm-10">
+                            <select name="module_postnl_adrescheck_api_type" id="module_postnl_adrescheck_api_type" class="form-control">
+                                <option value="checkout_postalcode_check" selected="selected">{{ option_checkout_postalcode_check }}</option>
+                            </select>
+                            <span class="help-block">{{ text_api_type }}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="module_postnl_adrescheck_api_key">{{ label_api_key }}</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="module_postnl_adrescheck_api_key" value="{{ module_postnl_adrescheck_api_key }}"
+                                placeholder="{{ label_api_key }}" id="module_postnl_adrescheck_api_key" class="form-control" />
+                            <span class="help-block">{{ text_api_key }}</span>
+                        </div>
+                    </div>
+
+                    <!--div class="form-group">
+                        <label class="col-sm-2 control-label" for="module_postnl_adrescheck_status">{{ label_status }}</label>
+                        <div class="col-sm-10">
+                            <select name="module_postnl_adrescheck_status" id="module_postnl_adrescheck_status" class="form-control">
+                            {% if module_postnl_adrescheck_status %}
+                                <option value="1" selected="selected">{{ text_enabled }}</option>
+                                <option value="0">{{ text_disabled }}</option>
+                            {% else %}
+                                <option value="1">{{ text_enabled }}</option>
+                                <option value="0" selected="selected">{{ text_disabled }}</option>
+                                {% endif %}
+                            </select>
+                        </div>
+                    </div-->
+
+                    {% if module_postnl_adrescheck_api_key %}
+
+                        <!--<div class="form-group form-group-onoff">
+                            <div class="col-sm-2 control-label"><div class="checkbox">
+                                <input type="radio" name="module_postnl_adrescheck_type" value="zipcode_housenumber" id="zipcode_housenumber"{% if module_postnl_adrescheck_zipcode_housenumber %} checked{% endif %} disabled>
+                            </div></div>
+                            <div class="col-sm-10">
+                                <label for="zipcode_housenumber">
+                                    {{label_zipcode_housenumber}}
+                                    <span class="help-block">{{help_zipcode_housenumber}}</span>
+                                </label>
+                            </div>
+                            <div class="col-sm-12">&nbsp;</div>
+                            <div class="col-sm-2 control-label"><div class="checkbox">
+                                <input type="radio" name="module_postnl_adrescheck_type" value="autocomplete" id="autocomplete"{% if module_postnl_adrescheck_autocomplete %} checked{% endif %} disabled>
+                            </div></div>
+                            <div class="col-sm-10">
+                                <label for="autocomplete">
+                                    {{label_autocomplete}} <sup>beschikbaar in versie 2</sup>
+                                    <span class="help-block">{{help_autocomplete}}</span>
+                                </label>
+                            </div>
+                        </div>-->
+                        <input type="hidden" name="module_postnl_adrescheck_type" value="zipcode_housenumber">
+                        <div class="form-group form-group-onoff">
+                            <div class="col-sm-2 control-label"><div class="checkbox">
+                                <input type="checkbox" name="module_postnl_adrescheck_manual_input" id="manual_input"{% if module_postnl_adrescheck_manual_input %} checked{% endif %}>
+                            </div></div>
+                            <div class="col-sm-10">
+                                <label for="manual_input">
+                                    {{label_manual_input}}
+                                    <span class="help-block">{{help_manual_input}}</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-onoff">
+                            <div class="col-sm-2 control-label"><div class="checkbox">
+                                <input type="checkbox" name="module_postnl_adrescheck_showlabel" id="showlabel"{% if module_postnl_adrescheck_showlabel %} checked{% endif %}>
+                            </div></div>
+                            <div class="col-sm-10">
+                                <label for="showlabel">
+                                    {{label_showlabel}}
+                                    <span class="help-block">{{help_showlabel}}
+                                    <img src="{{ label_img }}" width="250" class="img-responsive" /></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="timeout">{{label_timeout}}</label>
+                            <div class="col-sm-10">
+                                <select name="module_postnl_adrescheck_timeout" id="timeout" class="form-control">
+                                    <option value="5"{% if module_postnl_adrescheck_timeout == 5 %}selected="selected"{% endif %}>5 seconden</option>
+                                    <option value="10"{% if module_postnl_adrescheck_timeout == 10 %}selected="selected"{% endif %}>10 seconden</option>
+                                </select>
+                                <span class="help-block">{{ help_timeout }}</span>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-onoff">
+                            <div class="col-sm-2 control-label"><div class="checkbox">
+                                <input type="checkbox" name="module_postnl_adrescheck_debug" id="debug"{% if module_postnl_adrescheck_debug %} checked{% endif %}>
+                            </div></div>
+                            <div class="col-sm-10">
+                                <label for="debug">
+                                    {{label_debug}}
+                                    <span class="help-block">{{help_debug}}</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    {% endif %}
+                </form>
+
+                <hr size="1">
+                <p class="text-right">
+                    <strong>PostNL Adrescheck</strong> <small>{{ text_plugin_version }}</small><br>
+                    <small>{{ text_manual_docs }}</small><br>
+                    <small>{{ text_terms }}</small><br>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .form-group-onoff .control-label { padding-top:0; }
+    .form-group-onoff label { display:block; margin-bottom: 0; }
+    .form-group-onoff .checkbox input[type="checkbox"] { margin-left:0; }
+    #form-postnl-adrescheck .help-block { display:block; margin-top: 0; margin-bottom: 0; font-size:11px; font-weight:normal; }
+</style>
+{{ footer }}
