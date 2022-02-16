@@ -7,8 +7,7 @@ This extension will help your visitors fill in their address.
 - Do you wish to change settings after installation?  
   Login via /admin or /beheer, go to Extensions > Extensions > Modules and scroll to PostNL listings. Use the Edit button.
 
-- todo: FAQ link
-- todo: Installation video link
+- Use your PostNL Business Account get your API-key. Apply this key in the extension settings to activate the underlying API. Read more at the [OpenCart marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=43309).
 - More info on plugins [here](https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/it-koppelingen-webwinkels/plug-ins/)
 
 # Pre-requisites prior to installing the plugin
