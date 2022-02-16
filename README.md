@@ -12,7 +12,7 @@ This extension will help your visitors fill in their address.
 - More info on plugins [here](https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/it-koppelingen-webwinkels/plug-ins/)
 
 # Pre-requisites prior to installing the plugin
-  1. The plugin supports these OpenCart versions - 2.0.x.x to 2.2.x.x, 2.3.x.x, 3.x.x.x and above. The plugin is compatible with the default Open Cart Themes OC2, OC3 and Journal 2 en Journal 3.
+  1. The plugin supports these OpenCart versions - 2.0.x.x to 2.2.x.x, 2.3.x.x, 3.x.x.x and above. The plugin is compatible with the default Open Cart Themes OC2, OC3 plus Journal 2 and Journal 3.
 
   2. If you were previously using the PostNL Adrescheck Extension plugin with an older version, please follow the Uninstall Guides below to uninstall the existing plugin before attempting to install the new plugin:
 
