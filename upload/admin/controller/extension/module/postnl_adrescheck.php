@@ -17,10 +17,10 @@ class ControllerExtensionModulePostnlAdrescheck extends Controller {
         $data = $this->load->language('extension/module/postnl_adrescheck');
 
         $links = [
-            '%link_products%' => 'https://www.postnl.nl/zakelijke-oplossingen/slimme-dataoplossingen/adrescheck/#Adrescheck%20webcomponent%20-%20Probeer%20de%20API%20gratis',
-            '%link_api%' => 'https://mijn.postnl.nl/c/BP2_Mod_Login.app?inresponseto=&RelayState=&startURL=%2F%3Fpst%3Dk-pnl_f-f_p-pnl_u-txt_s-pnl_r-pnlinlogopties_v-zakelijkpakket',
-            '%link_extension%' => 'https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=?????',
-            '%link_manual_docs%' => 'https://postnl.nl/',
+            '%link_products%' => 'https://www.postnl.nl/zakelijke-oplossingen/slimme-dataoplossingen/adrescheck/',
+            '%link_api%' => 'https://mijn.postnl.nl/',
+            '%link_extension%' => 'https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=43309',
+            '%link_manual_docs%' => 'https://github.com/postnl/opencart-extension',
             '%link_terms%' => 'https://www.postnl.nl/algemene-voorwaarden/',
         ];
         foreach($data as $k => $v) {
