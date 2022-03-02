@@ -141,7 +141,7 @@
 
                 <hr size="1">
                 <p class="text-right">
-                    <strong>PostNL Adrescheck</strong> <small><?php echo $text_plugin_version ?></small>
+                    <strong>PostNL Adrescheck</strong> <small><?php echo $text_plugin_version ?></small><br>
                     <small><?php echo $text_manual_docs ?></small><br>
                     <small><?php echo $text_terms ?></small><br>
                 </p>

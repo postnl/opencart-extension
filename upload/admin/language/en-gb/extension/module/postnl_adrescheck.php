@@ -14,36 +14,38 @@ $_['heading_title']             = 'PostNL Address Validation';
 $_['text_extension']            = 'Extensions';
 $_['text_success']              = 'Success: You have modified module PostNL Address Validation!';
 $_['text_edit']                 = 'Edit PostNL Address Validation Extension module';
-$_['text_heading']              = 'Welkom bij de plug-in van PostNL';
-$_['text_body']                 = '<p>Kies de adrescheck die je wilt gebruiken.
-    Om gebruik te kunnen maken van de  adrescheck API en de plug in te activeren hebben we je PostNL API key nodig.</p>
-<p>De CPC is gratis voor Zakelijke PostNL klanten. Wil je meer? Bekijk dan <a href="%link_products%" target="_blank">hier</a> al onze producten en abonnementen.</p>
-<p>Of <a href="%link_api%" target="_blank">log in</a> met je PostNL Zakelijk account om jouw API key en abonnementen op te zoeken.</p>
-';
-$_['text_api_type']             = 'Kies de API die je wilt gebruiken';
-$_['text_api_key']              = 'Vul hier jouw API key in';
+$_['text_heading']              = 'Welcome at the PostNL extension';
+$_['text_body']                 = '<p>Please select the prefered Address Validation.
+Before using the OpenCart extension, you need to register your PostNL API-key.</p>
+<p>This service can be used free of charge for business customers of PostNL Parcels. You use the API key of the Checkout Postcode Check or the Address Check Nederland.
+<a href="%link_api%" target="_blank">Log in to PostNL</a> to find and activate the API key.
+Or apply <a href="%link_products%" target="_blank">here</a> for the free Address Check Nederland and receive the activation link by email within 10 minutes.</p>
+<p>Are you not a PostNL business parcel customer, but are you interested to use the plug-in?
+In that case apply for a bundle <a href="%link_products%" target="_blank">here</a> or browse all our products and subscriptions first.';
+$_['text_api_type']             = 'Select the API you want to use';
+$_['text_api_key']              = 'Place your API-key here';
 
-$_['text_upgrade_message']      = 'A newer version of the PostNL Address Validation Extension plugin is available. To download it, go to <a href="%link_extension%" target="_blank">OpenCart marketplace</a>.';
+$_['text_upgrade_message']      = 'A newer version of the PostNL Address Validation Extension is available. To download it, go to <a href="%link_extension%" target="_blank">OpenCart marketplace</a>.';
 $_['text_plugin_version']       = 'Plugin Version %s';
-$_['text_manual_docs']          = '<a href="%link_manual_docs%" target="_blank">Handleiding en documentatie</a>';
-$_['text_terms']                = '<a href="%link_terms%" target="_blank">Algemene voorwaarden</a>';
+$_['text_manual_docs']          = '<a href="%link_manual_docs%" target="_blank">Installation Instructions</a>';
+$_['text_terms']                = '<a href="%link_terms%" target="_blank">Terms and Conditions</a>';
 
 $_['label_api']                 = 'API';
 $_['option_checkout_postalcode_check'] = 'Checkout Postalcode Check';
 $_['label_api_key']             = 'API Key';
 $_['label_status']              = 'Status';
 $_['label_zipcode_housenumber'] = 'Zipcode and house number';
-$_['help_zipcode_housenumber']  = 'Klant voert postcode en huisnummer in en het adres wordt ingevuld.';
-$_['label_manual_input']        = 'Handmatig invoeren';
-$_['help_manual_input']         = 'Handmatige invoer indien suggestie niet correct is.';
-$_['label_autocomplete']        = 'Auto complete';
-$_['help_autocomplete']         = 'Indien klant straatnaam begint te typen tonen we direct een lijst met opties waar de klant uit kan kiezen. Klant kan optie kiezen en hoeft dan niet verder te typen.';
-$_['label_showlabel']           = 'Toon PostNL Address Validation label';
-$_['help_showlabel']            = 'Voorbeeld: ';
+$_['help_zipcode_housenumber']  = 'Customers fill out zipcode and house number to help and prefill other address components.';
+$_['label_manual_input']        = 'Manual input';
+$_['help_manual_input']         = 'Allow for manual input in case of wrong suggestion.';
+$_['label_autocomplete']        = 'Autocomplete';
+$_['help_autocomplete']         = 'When the user starts typing street name, the extension offers a list with suggestions to choose from. The user can pick one, instead of typing all address data.';
+$_['label_showlabel']           = 'Show PostNL Address Validation label';
+$_['help_showlabel']            = 'Example: ';
 $_['label_timeout']             = 'Time out';
-$_['help_timeout']              = 'Indien er geen respons is binnen de opgegeven time out dan kan de gebruiker zelf het adres invoeren.';
+$_['help_timeout']              = 'When there is no response within the set time, the user can fill out the address manually.';
 $_['label_debug']               = 'Debug frontend';
-$_['help_debug']                = 'Vink aan als de plugin niet goed werkt om foutmeldingen te zien';
+$_['help_debug']                = 'Check for debugging and showing errors.';
 
 // Error
 $_['error_api_key']             = 'Api key invalid';
