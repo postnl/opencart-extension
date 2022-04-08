@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modification>
+    <code>postnl_adrescheck</code>
     <name>PostNL Address Validation</name>
     <version>1.0</version>
     <author>De Webmakers</author>
