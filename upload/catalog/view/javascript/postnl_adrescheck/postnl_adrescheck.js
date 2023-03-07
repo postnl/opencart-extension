@@ -70,14 +70,18 @@
                             this.steps['billing'] = new checkoutStep('billing');
                             this.steps['billing'].manipulateFields();
                             this.steps['billing'].fieldsEvents();
-                        } else this.steps['billing'].fillDefaultFields();
+                        } else {
+                            if(!!this.steps['billing']) this.steps['billing'].fillDefaultFields();
+                        }
                     } else dbg('Billing elements not found');
                     if(Object.keys(this.elements.shipping).length > 0 && $(this.elements.shipping.country).length) {
                         if(!$('#postnl_adres_shipping').length) {
                             this.steps['shipping'] = new checkoutStep('shipping');
                             this.steps['shipping'].manipulateFields();
                             this.steps['shipping'].fieldsEvents();
-                        } else this.steps['shipping'].fillDefaultFields();
+                        } else {
+                            if(!!this.steps['shipping']) this.steps['shipping'].fillDefaultFields();
+                        }
                     } else dbg('Shipping elements not found');
                 }
                 if(this.hasDebug) console.log('Ajax event: ', opts.url);
