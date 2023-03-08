@@ -124,6 +124,7 @@ class ControllerExtensionModulePostnlAdrescheck extends Controller {
             $this->load->model('extension/event');
             $mdl = $this->model_extension_event;
         }
+        $mdl->deleteEvent('postnl_adrescheck');
         $mdl->addEvent('postnl_adrescheck', 'admin/view/common/dashboard/after', 'extension/module/postnl_adrescheck/eventDashboardAfter');
         $mdl->addEvent('postnl_adrescheck', 'catalog/view/common/header/before', 'extension/module/postnl_adrescheck/eventHeaderBefore');
         if(version_compare(VERSION, '3.0.0.0') >= 0) {
