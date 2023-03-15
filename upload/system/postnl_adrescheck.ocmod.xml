@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <code>postnl_adrescheck</code>
+    <name>PostNL Address Validation</name>
+    <version>1.0.2</version>
+    <author>De Webmakers</author>
+    <link>https://www.dewebmakers.nl</link>
+
+    <file path="catalog/controller/common/header.php" error="skip">
+        <operation>
+            <search><![CDATA[public function index() {]]></search>
+            <add position="after"><![CDATA[
+                if(version_compare(VERSION, '2.2.0.0', '<=')) {
+                    $this->load->model('module/postnl_adrescheck');
+                    list($route, $data) = $this->model_module_postnl_adrescheck->eventHeaderBefore($route, $data);
+                }
+            ]]></add>
+        </operation>
+    </file>
+    <file path="catalog/view/theme/*/template/common/header.tpl" error="skip">
+        <operation>
+            <search><![CDATA[</head>]]></search>
+            <add position="before"><![CDATA[
+                <?php
+                if(version_compare(VERSION, '2.2.0.0', '<=')) {
+                require modification(DIR_TEMPLATE . '/default/template/extension/module/postnl_adrescheck.tpl');
+                }
+                ?>
+            ]]></add>
+        </operation>
+    </file>
+</modification>
