@@ -5,7 +5,7 @@
  * This source code is licensed under the license found in the
  * LICENSE file in the root directory of this source tree.
  */ ?>
-<?php if($module_postnl_adrescheck_status == 1) { ?>
+<?php if(isset($module_postnl_adrescheck_status) && $module_postnl_adrescheck_status == 1) { ?>
 <script type="text/javascript">
 var postnl_adrescheck_data = JSON.parse('<?php echo $module_postnl_adrescheck_json ?>');
 (function() {

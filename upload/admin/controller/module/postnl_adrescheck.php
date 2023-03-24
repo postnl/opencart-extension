@@ -15,7 +15,11 @@ class ControllerModulePostnlAdrescheck extends Controller {
 
     public function index() {
 
-        $data = $this->load->language('extension/module/postnl_adrescheck');
+        if(version_compare(VERSION, '2.2.0.0') > 0) {
+            $data = $this->load->language('extension/module/postnl_adrescheck');
+        } else {
+            $data = $this->load->language('module/postnl_adrescheck');
+        }
 
         $links = [
             '%link_products%' => 'https://www.postnl.nl/zakelijke-oplossingen/slimme-dataoplossingen/adrescheck/',
@@ -107,7 +111,7 @@ class ControllerModulePostnlAdrescheck extends Controller {
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
 
-        if(version_compare(VERSION, '2.2.0.0') >= 0) {
+        if(version_compare(VERSION, '2.2.0.0') > 0) {
             $this->response->setOutput($this->load->view('extension/module/postnl_adrescheck', $data));
         }
         else {
@@ -130,7 +134,7 @@ class ControllerModulePostnlAdrescheck extends Controller {
             $this->load->model('extension/event');
             $mdl = $this->model_extension_event;
         }
-        if(version_compare(VERSION, '2.2.0.0') >= 0) {
+        if(version_compare(VERSION, '2.2.0.0') > 0) {
             $mdl->deleteEvent('postnl_adrescheck');
             $mdl->addEvent('postnl_adrescheck', 'admin/view/common/dashboard/after', 'extension/module/postnl_adrescheck/eventDashboardAfter');
             $mdl->addEvent('postnl_adrescheck', 'catalog/view/common/header/before', 'extension/module/postnl_adrescheck/eventHeaderBefore');
